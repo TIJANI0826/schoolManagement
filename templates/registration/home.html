@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div> <h4> Welcome {{ user.username}} </h4></div>
+<div>
+    <h1>
+        Not Registered as student.click<a href="{% url 'students:register' %}" class="nav-link">here</a> to register
+    </h1>
+</div>
+{% else %}
+<div>    
+    Welcome User
+
+    <h1>
+        View Courses <a href="{% url 'courses:course_list' %}" class="nav-link">
+            here
+        </a>
+    </h1>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

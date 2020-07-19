@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card mt-3 mb-4">
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    {% if user.profile.roles == 1 %}
+                    <h1>Welcome ,{{ user.username }}</h1><hr>
+                    <h4>Profile Image</h4><img src="{{ user.profile.profile_image.image.url }}"><hr>
+                    <h4>First Name:</h4><h6>{{ user.first_name }}</h6><hr>
+                    <h4>Last Name:</h4><h6>{{ user.last_name }}</h6><hr>
+                    <h4>Email:</h4><h6>{{ user.email }}</h6><hr>
+                    <h4>Bio:</h4><h6>{{ user.profile.bio }}</h6><hr>
+                    <h4>Location: </h4><h6>{{ user.profile.location }}</h6><hr>
+                    <h4>Birth Date:</h4><h6>{{ user.profile.birth_date }}</h6><hr>
+                    <h4>Gender:</h4><h6>{{ user.profile.gender }}</h6><hr>
+                    <h4>Admission No:</h4><h6>{{ user.profile.admission_no }}</h6><hr>
+                    <h4>Address:</h4><h6>{{ user.profile.address }}</h6><hr>
+                    <h4>Admitted on:</h4><h6>{{ user.profile.date_of_admission }}</h6><hr>
+                    <h4>Course:</h4><h6>{{ user.profile.course }}</h6><hr>
+
+                    {% endif %}
+                    {% else %}
+                    <h1>Register as <a href="{% url 'update' %}">Student</a></h1>
+                    
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+
+</div>
+{% endblock %}
