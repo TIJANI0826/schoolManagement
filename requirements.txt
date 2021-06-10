@@ -1,6 +1,6 @@
 asgiref==3.2.10
 confusable-homoglyphs==3.2.0
-Django==2.2.5
+Django==2.2.24
 django-crispy-forms==1.7.0
 django-registration==3.1
 Pillow==6.2.0
